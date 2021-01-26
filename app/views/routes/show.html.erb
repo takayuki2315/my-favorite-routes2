@@ -1,0 +1,64 @@
+<main class="main">
+  <div class="inner">
+    <div class="prototype__wrapper">
+      <p class="prototype__hedding">
+        <%= "#{@route.title}"%>
+      </p>
+      <%= link_to "by #{@route.user.nickname}", user_path(@route.user.id), class: :prototype__user %>
+      <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
+      <% if user_signed_in? && current_user.id == @route.user_id %>
+        <div class="prototype__manage">
+          <%= link_to "編集する", edit_route_path(@route.id), class: :prototype__btn %>
+          <%= link_to "削除する", route_path(@route.id), method: :delete, class: :prototype__btn %>
+        </div>
+      <% end %>
+      <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
+      <div class="prototype__detail">
+      　<p class="detail__title">＜ルート詳細＞</p>
+      </div>
+      <div class="route_image_text">
+        <div class="prototype__image">
+          <%= image_tag @route.image %>
+        </div>
+        <div class="route_text">
+          <%= "#{@route.text}" %>
+        </div>
+      </div>
+      <div class="prototype__body">
+        <div class="prototype__detail">
+          <p class="detail__title">カテゴリー</p>
+          <p class="detail__message">
+            <%= "#{@route.category.name}" %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">地域</p>
+          <p class="detail__message">
+            <%= "#{@route.city.name}" %>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <% if user_signed_in? %>
+      <%= form_with model: [@route, @comment], local: true do |form| %>
+        <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
+        <%= form.submit "コメントを投稿する" %>
+      <% end %>
+      <% else %>
+      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+      <% end %>
+      <h4>＜コメント一覧＞</h4>
+      <div class="comments">
+        <% if @comments %>
+          <% @comments.each do |comment| %>
+          <p>
+            <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+            <%= comment.text %>
+          </p>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</main>

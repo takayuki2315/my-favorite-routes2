@@ -1,0 +1,43 @@
+<main class="main">
+  <div class='title-contents'>
+    <h2 class='service-title'>
+      あなたのオススメの"ルート"を共有しよう
+    </h2>
+    <p class='service-explain'>
+      "お気に入りのルート"、 "ここは〇〇で行くと近い"、 "オススメの散歩道"、、、
+    </p>
+    <p class='service-explain'>
+      "ジョギングコース"、 "地図にはない裏道"、 "今まで知らなかった最短経路"、、、
+    </p>
+    <p class='service-explain'>
+      <span class='emphasis'>「あ！、こんな道があったんだ！！」</span>
+      <span class='emphasis2'>そんな新しい発見があるかも！？</span>
+    </p>
+  </div>
+
+  <div class="inner">
+    <%# ログインしているときは以下を表示する %>
+    <div class="inner2">
+    <% if user_signed_in? %>
+      <div class="greeting">
+      <%= image_tag("woman.jpg", class: :image_zero) %>
+      <%= image_tag("family.jpeg", class: :image_one) %>
+        <div class="hello">
+        <span>こんにちは！</span>
+          <%= link_to "#{current_user.nickname}さん", user_path(current_user.id), class: :greeting__link%>
+        </div>
+      <%= image_tag("senior1.jpeg", class: :image_two) %>
+      <%= image_tag("family2.jpeg", class: :image_three) %>
+      </div>
+    <% end %>
+    <%# // ログインしているときは上記を表示する %>
+      <h2 class='title'>＜投稿一覧＞</h2>
+      <div class="card__wrapper1">
+        <div class="card__wrapper">
+        <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
+          <%= render partial: "route", collection: @routes %>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

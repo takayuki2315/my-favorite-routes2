@@ -1,0 +1,15 @@
+<div class="card">
+  <%= link_to image_tag(route.image, class: :card__img ), route_path(route.id) %>
+  <div class="card__body">
+    <%= link_to "#{route.title}", route_path(route.id), class: :card__title%>
+    <p class="card__summary">＜カテゴリー＞
+      <span class="category"><%= "#{route.category.name}" %>
+      </span>
+    </p>
+    <p class="card__summary">＜地域＞
+      <span class="category"><%= "#{route.city.name}" %>
+      </span>
+    </p>
+    <%= link_to "#{route.user.nickname}", user_path(route.user.id), class: :card__user %>
+  </div>
+</div>

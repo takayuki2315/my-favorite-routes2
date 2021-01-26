@@ -1,0 +1,30 @@
+<%= form_with model: @route, local: true do |f|%>
+  <div class="field">
+    <%= f.label :title, "タイトル" %><span class="indispensable">必須</span><br />
+    <%= f.text_field :title, class: :form_title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :text, "ルート詳細" %><span class="indispensable">必須</span><br />
+    <%= f.text_area :text, class: :form__text %>
+  </div>
+
+  <div class="weight-bold-text">
+    カテゴリー
+  <span class="indispensable">必須</span>
+  </div>
+  <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+  <div class="weight-bold-text">
+    地域
+  </div>
+  <%= f.collection_select(:city_id, City.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
+
+  <div class="field">
+    <%= f.label :image, "画像 (好きな画像を添付してください)" %><span class="indispensable">必須</span><br />
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "保存する", class: :form__btn  %>
+  </div>
+<% end %>
