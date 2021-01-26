@@ -21,13 +21,13 @@
     <% if user_signed_in? %>
       <div class="greeting">
       <%= image_tag("woman.jpg", class: :image_zero) %>
-      <%= image_tag("family2.jpeg", class: :image_one) %>
+      <%= image_tag("family.jpg", class: :image_one) %>
         <div class="hello">
         <span>こんにちは！</span>
           <%= link_to "#{current_user.nickname}さん", user_path(current_user.id), class: :greeting__link%>
         </div>
-      <%= image_tag("senior1.jpeg", class: :image_two) %>
-      <%= image_tag("family2.jpeg", class: :image_three) %>
+      <%= image_tag("senior1.jpg", class: :image_two) %>
+      <%= image_tag("family2.jpg", class: :image_three) %>
       </div>
     <% end %>
     <%# // ログインしているときは上記を表示する %>
