@@ -21,7 +21,7 @@
     <% if user_signed_in? %>
       <div class="greeting">
       <%= image_tag("woman.jpg", class: :image_zero) %>
-      <%= image_tag("family2.jpeg", class: :image_one) %>
+      <%= image_tag("family.jpeg", class: :image_one) %>
         <div class="hello">
         <span>こんにちは！</span>
           <%= link_to "#{current_user.nickname}さん", user_path(current_user.id), class: :greeting__link%>
