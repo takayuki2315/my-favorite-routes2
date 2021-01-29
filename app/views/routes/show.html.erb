@@ -40,19 +40,18 @@
       </div>
     </div>
     <div class="container">
-      <% if user_signed_in? %>
+    <% if user_signed_in? %>
       <%= form_with model: [@route, @comment], local: true do |form| %>
         <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
         <%= form.submit "コメントを投稿する" %>
       <% end %>
-      <% else %>
+    <% else %>
       <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
-      <% end %>
+    <% end %>
       <h4>＜コメント一覧＞</h4>
         <% if @comments.blank? %>
           <h4>コメントは投稿されていません</h4>
         <% else %>
-        <% if @comments %>
           <% @comments.each do |comment| %>
           <div class="comments">
           <p>
