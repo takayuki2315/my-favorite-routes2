@@ -52,6 +52,7 @@
         <% if @comments.blank? %>
           <h4>コメントは投稿されていません。</h4>
         <% else %>
+        <% if @comments %>
           <% @comments.each do |comment| %>
           <div class="comments">
           <p>
