@@ -49,16 +49,21 @@
       <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
       <% end %>
       <h4>＜コメント一覧＞</h4>
-      <div class="comments">
-        <% if @comments %>
+        <% if @comments.blank? %>
+          <h4>コメントは投稿されていません。</h4>
+        <% else %>
           <% @comments.each do |comment| %>
+          <div class="comments">
           <p>
             <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
             <%= comment.text %>
           </p>
+          </div>
           <% end %>
         <% end %>
-      </div>
     </div>
   </div>
 </main>
+
+
+
