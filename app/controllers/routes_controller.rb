@@ -23,7 +23,7 @@ class RoutesController < ApplicationController
   def show
     @route = Route.find(params[:id])
     @comment = Comment.new
-    @comments = @route.comments.includes(:user)
+    @comments = @route.comments.includes(:user).order("created_at DESC")
   end
 
   def edit
