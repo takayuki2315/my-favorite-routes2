@@ -18,26 +18,28 @@
             <%= link_to image_tag("taiyou.png", class: :logo_one), root_path %>
             <%= link_to image_tag("my_favorite_routes.png", class: :logo_two), root_path %>
           </div>
+          <% if user_signed_in? %>
             <%= form_with(url: search_routes_path, local: true, method: :get, class: "search-form") do |form| %>
               <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
               <%= form.submit "検索", class: "search-btn" %>
             <% end %>
+          <% end %>
 
-          <%# ログインしているときは以下を表示するようにしましょう %>
+          <%# ログインしているときは以下を表示 %>
           <% if user_signed_in? %>
             <div class="nav__right">
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
               <%= link_to "新規投稿", new_route_path, class: :nav__btn %>
             </div>
           <% else %>
-          <%# // ログインしているときは上記を表示するようにしましょう %>
-          <%# ログインしていないときは以下を表示するようにしましょう %>
+          <%# // ログインしているときは上記を表示 %>
+          <%# ログインしていないときは以下を表示 %>
             <div class="nav__right">
               <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
               <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
             </div>
           <% end %>
-          <%# // ログインしていないときは上記を表示するようにしましょう %>
+          <%# // ログインしていないときは上記を表示%>
         </div>
       </div>
     </header>
