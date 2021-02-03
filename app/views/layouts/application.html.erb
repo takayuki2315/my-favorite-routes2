@@ -18,13 +18,6 @@
             <%= link_to image_tag("taiyou.png", class: :logo_one), root_path %>
             <%= link_to image_tag("my_favorite_routes.png", class: :logo_two), root_path %>
           </div>
-          <% if user_signed_in? %>
-            <%= form_with(url: search_routes_path, local: true, method: :get, class: "search-form") do |form| %>
-              <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
-              <%= form.submit "検索", class: "search-btn" %>
-            <% end %>
-          <% end %>
-
           <%# ログインしているときは以下を表示 %>
           <% if user_signed_in? %>
             <div class="nav__right">
@@ -45,6 +38,7 @@
     </header>
     
     <%= yield %>
+    
     <footer class="footer">
       <p class="copyright">Copyright © MY FAVORITE ROUTES All rights reserved.</p>
     </footer>
