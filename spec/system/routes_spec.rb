@@ -71,16 +71,16 @@ RSpec.describe 'ルート編集', type: :system do
       visit edit_route_path(@route1)
       # すでに投稿済みの内容がフォームに入っていることを確認する
       expect(
-        find('#route_title').value # tweet_imageというid名が付与された要素の値を取得
+        find('#route_title').value 
       ).to eq @route1.title
       expect(
-        find('#route_text').value # tweet_textというid名が付与された要素の値を取得
+        find('#route_text').value 
       ).to eq @route1.text
       expect(
-        find('#item-category').value # tweet_imageというid名が付与された要素の値を取得
+        find('#item-category').value 
       ).to eq "#{@route1.category_id}"
       expect(
-        find('#item-sales-status').value # tweet_textというid名が付与された要素の値を取得
+        find('#item-sales-status').value 
       ).to eq "#{@route1.city_id}"
       # 投稿内容を編集する
       fill_in 'タイトル', with: @route1.title
@@ -116,7 +116,7 @@ RSpec.describe 'ルート編集', type: :system do
       # 詳細ページへ遷移する
       #visit route_path(@route2)
       # ルート2に「編集」ボタンがないことを確認する
-      #expect(page).to have_no_link '編集', href: edit_route_path(@route2)
+      #expect(page).to have_no_link '削除', href: edit_route_path(@route2)
     #end
     it 'ログインしていないとルートの編集画面には遷移できない' do
       # トップページにいる
@@ -126,5 +126,77 @@ RSpec.describe 'ルート編集', type: :system do
       # ログインページに遷移する
       visit new_user_session_path
     end
+  end
+end
+
+RSpec.describe 'ルート削除', type: :system do
+  before do
+    @route1 = FactoryBot.create(:route)
+  end
+  context 'ルート削除ができるとき' do
+    it 'ログインしたユーザーは自らが投稿したルートの削除ができる' do
+      # ルート1を投稿したユーザーでログインする
+      visit new_user_session_path
+      fill_in 'メールアドレス', with: @route1.user.email
+      fill_in 'パスワード', with: @route1.user.password
+      find('input[name="commit"]').click
+      expect(current_path).to eq root_path
+      # ルート1に詳細ページに遷移するためのタイトルがあることを確認する
+      click_link '＜タイトル＞'
+      # 詳細ページへ遷移する
+      visit route_path(@route1)
+      # ルート1の詳細ページに「削除」ボタンがあることを確認する
+      expect(page).to have_link '削除', href: route_path(@route1)
+      # 削除ボタンをクリックする
+      click_link '削除'
+      # トップページに遷移する
+      visit root_path
+      # トップページにはルート1の内容が存在しないことを確認する（タイトル）
+      expect(page).to have_no_content(@route1.title)
+    end
+  end
+  context 'ルート削除ができないとき' do
+    #it 'ログインしたユーザーは自分以外が投稿したルートの削除ができない' do
+      # ルート1を投稿したユーザーでログインする
+      # ルート2に「削除」ボタンが無いことを確認する
+    #end
+    it 'ログインしていないとルートの削除ボタンがない' do
+      # トップページに移動する
+      visit root_path
+      # ログインしていない状態でクリックする
+      click_link '＜タイトル＞'
+      # ログインページに遷移する
+      visit new_user_session_path
+    end
+  end
+end
+
+RSpec.describe 'ルート詳細', type: :system do
+  before do
+    @route1 = FactoryBot.create(:route)
+  end
+  it 'ログインしたユーザーはルート詳細ページに遷移してコメント投稿欄が表示される' do
+    # ログインする
+    visit new_user_session_path
+      fill_in 'メールアドレス', with: @route1.user.email
+      fill_in 'パスワード', with: @route1.user.password
+      find('input[name="commit"]').click
+      expect(current_path).to eq root_path
+    # ルート1に詳細ページに遷移するためのタイトルがあることを確認する
+    click_link '＜タイトル＞'
+    # 詳細ページへ遷移する
+    visit route_path(@route1)
+    # 詳細ページにルートの内容が含まれている
+    expect(page).to have_content("#{@route1.text}")
+    # コメント用のフォームが存在する
+    expect(page).to have_selector 'form'
+  end
+  it 'ログインしていない状態でルート詳細ページに遷移できない' do
+    # トップページに移動する
+    visit root_path
+    # ログインしていない状態でクリックする
+    click_link '＜タイトル＞'
+    # ログインページに遷移する
+    visit new_user_session_path
   end
 end
