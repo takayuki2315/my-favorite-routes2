@@ -9,11 +9,7 @@ RSpec.describe "ルートの投稿", type: :system do
   context 'ルートの投稿ができるとき'do
     it 'ログインしたユーザーは新規投稿できる' do
       # ログインする
-      visit new_user_session_path
-      fill_in 'メールアドレス', with: @user.email
-      fill_in 'パスワード', with: @user.password
-      find('input[name="commit"]').click
-      expect(current_path).to eq root_path
+      sign_in(@user)
       # 新規投稿ページへのリンクがあることを確認する
       expect(page).to have_content('新規投稿')
       # 投稿ページに移動する
@@ -56,11 +52,7 @@ RSpec.describe 'ルート編集', type: :system do
   context 'ルート編集ができるとき' do
     it 'ログインしたユーザーは自分が投稿したルートの編集ができる' do
       # ルート1を投稿したユーザーでログインする
-      visit new_user_session_path
-      fill_in 'メールアドレス', with: @route1.user.email
-      fill_in 'パスワード', with: @route1.user.password
-      find('input[name="commit"]').click
-      expect(current_path).to eq root_path
+      sign_in(@route1.user)
       # ルート1に詳細ページに遷移するためのタイトルがあることを確認する
       click_link '＜タイトル＞'
       # 詳細ページへ遷移する
@@ -136,11 +128,7 @@ RSpec.describe 'ルート削除', type: :system do
   context 'ルート削除ができるとき' do
     it 'ログインしたユーザーは自らが投稿したルートの削除ができる' do
       # ルート1を投稿したユーザーでログインする
-      visit new_user_session_path
-      fill_in 'メールアドレス', with: @route1.user.email
-      fill_in 'パスワード', with: @route1.user.password
-      find('input[name="commit"]').click
-      expect(current_path).to eq root_path
+      sign_in(@route1.user)
       # ルート1に詳細ページに遷移するためのタイトルがあることを確認する
       click_link '＜タイトル＞'
       # 詳細ページへ遷移する
@@ -177,11 +165,7 @@ RSpec.describe 'ルート詳細', type: :system do
   end
   it 'ログインしたユーザーはルート詳細ページに遷移してコメント投稿欄が表示される' do
     # ログインする
-    visit new_user_session_path
-      fill_in 'メールアドレス', with: @route1.user.email
-      fill_in 'パスワード', with: @route1.user.password
-      find('input[name="commit"]').click
-      expect(current_path).to eq root_path
+    sign_in(@route1.user)
     # ルート1に詳細ページに遷移するためのタイトルがあることを確認する
     click_link '＜タイトル＞'
     # 詳細ページへ遷移する

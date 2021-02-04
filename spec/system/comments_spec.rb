@@ -8,11 +8,7 @@ RSpec.describe 'コメント投稿', type: :system do
 
   it 'ログインしたユーザーはルート詳細ページでコメント投稿できる' do
     # ログインする
-    visit new_user_session_path
-      fill_in 'メールアドレス', with: @route.user.email
-      fill_in 'パスワード', with: @route.user.password
-      find('input[name="commit"]').click
-      expect(current_path).to eq root_path
+    sign_in(@route.user)
     # ルートに詳細ページに遷移するためのタイトルがあることを確認する
     click_link '＜タイトル＞'
     # 詳細ページへ遷移する
