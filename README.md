@@ -39,7 +39,10 @@
 * コメント機能
 * 投稿検索機能
 * 投稿の詳細、編集、削除機能
+* 単体テスト、結合テスト
 
+# トップページ
+![myfavoriteroute](https://user-images.githubusercontent.com/74900438/107000918-0d5b2b00-67cc-11eb-8b5e-e65261e128f3.gif)
 
 # テスト
 * RSpec
