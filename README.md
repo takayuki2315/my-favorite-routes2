@@ -2,11 +2,11 @@
 ## My Favorite Routes
 ![myfavoriteroutes2](https://user-images.githubusercontent.com/74900438/106980114-f227f580-67a2-11eb-8e62-e96f161ae23c.jpg)
 
-## サイトURL
+## URL
 ### https://my-favorite-routes2.herokuapp.com/
 
 # アプリ概要
-### ユーザー同士でオススメの"ルート"を投稿共有できるアプリケーション
+### ユーザー同士でオススメの『ルート』を投稿共有できるアプリケーション
 
 
 # 制作背景
@@ -42,7 +42,8 @@
 * 単体テスト、結合テスト
 
 # トップページ〜詳細ページ
-![myfavoriteroutes2](https://user-images.githubusercontent.com/74900438/107002563-c6bb0000-67ce-11eb-879f-b178b8843598.jpg)
+![myfavoriteroutes2](https://user-images.githubusercontent.com/74900438/107003023-71cbb980-67cf-11eb-9949-bdb4bcbfe277.gif)
+
 
 
 # テスト
