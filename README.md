@@ -26,15 +26,15 @@
 * 単体テスト、結合テスト
 
 # 使用したGem
-gem 'devise'
-gem 'mini_magick'
-gem 'image_processing', '~> 1.2'
-gem 'active_hash'
-gem "aws-sdk-s3"
-gem "pry-rails"
-gem 'rspec-rails', '~> 4.0.0'
-gem 'factory_bot_rails'
-gem 'faker'
+* gem 'devise'
+* gem 'mini_magick'
+* gem 'image_processing', '~> 1.2'
+* gem 'active_hash'
+* gem "aws-sdk-s3"
+* gem "pry-rails"
+* gem 'rspec-rails', '~> 4.0.0'
+* gem 'factory_bot_rails'
+* gem 'faker'
 
 # My_Favorite_Routesのテーブル設計
 
