@@ -491,7 +491,7 @@ a {
   
   }
   .service-title {
-    font-size: 35px;
+    font-size: 25px;
     color: rgb(253, 253, 253);
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
     padding-bottom: 20px;
@@ -514,14 +514,20 @@ a {
     font-size: 22px;
     color: rgb(254, 69, 195);
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 160px;
+    left: 30px;
   }
   .emphasis2{
     font-size: 22px;
     color: rgb(249, 107, 154);
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 290px;
+    left: 30px;
   }
   .greeting{
-    width: 100vw;
+    width: 100%;
     font-size: 15px;
     margin-bottom: 20px;
     text-align: center;
@@ -591,7 +597,6 @@ a {
   }
   .route_text {
     width: 90%;
-    height: 40vh;
     margin: 16px auto;
     padding: 16px 16px;
     box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
