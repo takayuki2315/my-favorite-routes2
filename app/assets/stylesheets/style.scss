@@ -343,7 +343,7 @@ a {
   padding: 16px 16px;
   box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
   background-color: white;
-  word-break: break-all;
+  word-wrap:break-all;;
 }
 .prototype__detail{
   display: flex;
@@ -454,6 +454,7 @@ a {
     padding: 16px 16px;
     box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
     background-color: white;
+    word-wrap:break-all;
   }
   .prototype__wrapper{
     min-height: calc(100vh - 250px);
@@ -490,13 +491,13 @@ a {
   
   }
   .service-title {
-    font-size: 25px;
+    font-size: 35px;
     color: rgb(253, 253, 253);
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
     padding-bottom: 20px;
     position: absolute;
     top: 30px;
-    left: 10px;
+    left: 30px;
     
   }
   
@@ -595,6 +596,7 @@ a {
     padding: 16px 16px;
     box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
     background-color: white;
+    word-wrap: break-all;
   }
   .prototype__detail{
     display: flex;
