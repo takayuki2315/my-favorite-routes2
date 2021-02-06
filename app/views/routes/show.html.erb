@@ -43,7 +43,7 @@
     <% if user_signed_in? %>
       <%= form_with model: [@route, @comment], local: true do |form| %>
         <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
-        <%= form.submit "コメントを投稿する" %>
+        <%= form.submit "コメントを投稿する", class: :comment__btn %>
       <% end %>
     <% else %>
       <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
