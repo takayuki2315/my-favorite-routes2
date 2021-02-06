@@ -70,18 +70,33 @@ a {
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
+  color: #0fa2fd;
   text-decoration: none;
   user-select: none;
-  border: 1px #87CEFA solid;
+  border: 1px #59bdfa solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+}
+.nav__btn2{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #ffffff;
+  text-decoration: none;
+  user-select: none;
+  background-color: #0fa2fd;
+  border: 1px #59bdfa solid;
   border-radius: 3px;
   transition: 0.4s ease;
 }
 .nav__btn:hover{
   color: #fff;
-  background: #87CEFA;
+  background: #36aef9;
 }
-
+.nav__btn2:hover{
+  color: #fff;
+  background: #0091ff;
+}
 .nav__logout{
   display: inline-block;
   padding: 0.4em 1.6em;
@@ -376,7 +391,7 @@ a {
 .user__card {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 /* フッター */
