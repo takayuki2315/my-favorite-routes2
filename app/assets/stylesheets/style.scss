@@ -37,7 +37,7 @@ a {
 /* ヘッダー */
 
 .header {
-  background-color: #f1f8fe;
+  background-color: #e5f8fc;
   margin-bottom: 30px;
 
 }
@@ -503,19 +503,28 @@ form input[type="submit"]:hover {
     width: 90%;
     margin: 0 auto;
   }
+  .inner3{
+    padding-top: 20px;
+    box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+    background-color: white;
+  }
+  .title {
+    text-align: center;
+    font-size: 3vh;
+    font-weight: bold;
+    margin: 3vh 0 3vh 0;
+    padding-top: 10px;
+  
+  }
   .page-heading {
     font-size: 24px;
   }
   .card {
     width: 48%;
-    margin-bottom: 40px;
+    margin-bottom: 5px;
   }
-  .prototype_image{
-    width: 60%;
-  }
-  
   .service-title {
-    font-size: 5vh;
+    font-size: 4.5vh;
     color: rgb(253, 253, 253);
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
     padding-bottom: 20px;
@@ -550,6 +559,11 @@ form input[type="submit"]:hover {
     box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
     background-color: white;
   }
+  .prototype__wrapper{
+    min-height: calc(100vh - 330px);
+    box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+    background-color: white;
+  }
   .nav__btn3 {
     display: none;
   }
@@ -574,8 +588,8 @@ form input[type="submit"]:hover {
   }
   .nav__btn3{
     display: inline-block;
-    padding: 0.4em 1.6em;
-    font-size: 0.8em;
+    padding: 1.1em 1.6em;
+    font-size: 0.5em;
     color: #ffffff;
     text-decoration: none;
     user-select: none;
@@ -599,7 +613,6 @@ form input[type="submit"]:hover {
   .inner {
     width: 92%;
     margin: 0 auto;
-    padding: 25px 0;
   }
   .title-contents {
     width: 100%;
@@ -687,7 +700,7 @@ form input[type="submit"]:hover {
     text-align: center;
     font-size: 20px;
     font-weight: bold;
-    padding-top: 60px;
+    padding-top: 70px;
   }
   .prototype__wrapper{
     min-height: calc(100vh - 300px);
@@ -747,7 +760,7 @@ form input[type="submit"]:hover {
   }
   .card {
     width: 100%;
-    margin-bottom: 60px;
+    margin-bottom: 15px;
   }
 
   .card__title {
