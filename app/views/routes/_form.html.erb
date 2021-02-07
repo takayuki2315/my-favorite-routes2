@@ -21,7 +21,7 @@
 
   <div class="field">
     <%= f.label :image, "画像 (好きな画像を添付してください)" %><span class="indispensable">必須</span><br />
-    <%= f.file_field :image %>
+    <%= f.file_field :image, class: :image_btn  %>
   </div>
 
   <div class="actions">

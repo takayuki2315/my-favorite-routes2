@@ -6,8 +6,12 @@
       </h2>
       <div class="card__wrapper1">
         <div class="card__wrapper">
-          <%# 部分テンプレートでそのユーザーが投稿したプロトタイプ投稿一覧を表示する %>
-          <%= render partial: "routes/route", collection: @routes%>
+          <%# 部分テンプレートでそのユーザーが投稿したルート一覧を表示する %>
+          <% if @user.routes.blank? %>
+            <h2><%= "＜#{@user.nickname}さんの投稿はありません＞" %></h2>
+          <% else %>
+            <%= render partial: "routes/route", collection: @routes%>
+          <% end %>
         </div>
       </div>
     </div>

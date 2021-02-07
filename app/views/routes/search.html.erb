@@ -4,33 +4,34 @@
       あなたのオススメの"ルート"を共有しよう
     </h2>
     <p class='service-explain'>
-      "お気に入りのルート"、 "ここは〇〇で行くと近い"、 "オススメの散歩道"、、、
+      "お気に入りのルート" 、 "ここは〇〇で行くと近い"、 "オススメの散歩道"、、、
     </p>
     <p class='service-explain'>
       "ジョギングコース"、 "地図にはない裏道"、 "今まで知らなかった最短経路"、、、
     </p>
-    <p class='service-explain'>
-      <span class='emphasis'>「あ！、こんな道があったんだ！！」</span>
-      <span class='emphasis2'>そんな新しい発見があるかも！？</span>
-    </p>
+    <p span class='emphasis'>「あ！、こんな道があったんだ！！」</span></p>
+    <p span class='emphasis2'>そんな新しい発見があるかも！？</span></p>
   </div>
+
   <div class="inner">
     <div class="inner3">
+    <% if user_signed_in? %>
+      <%= form_with(url: search_routes_path, local: true, method: :get, class: "search-form") do |form| %>
+      <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
+      <%= form.submit "検索", class: "search-btn" %>
+      <% end %>
+    <% end %>
       <h2 class='title'>＜検索一覧＞</h2>
-      <% if user_signed_in? %>
-        <%= form_with(url: search_routes_path, local: true, method: :get, class: "search-form") do |form| %>
-          <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
-          <%= form.submit "検索", class: "search-btn" %>
+      <div class="card__wrapper1">
+        <div class="card__wrapper">
+        <% if @routes.present?%>
+          <% @routes.each do |route| %>
+            <%= render partial: "route", locals: { route: route } %>
+          <% end %>
+        <% else %>
+          <div class="none">＜該当するキーワードはありませんでした＞</div>
         <% end %>
-      <% end %>
-      <div class="card__wrapper">
-      <% if @routes.present?%>
-        <% @routes.each do |route| %>
-          <%= render partial: "route", locals: { route: route } %>
-        <% end %>
-      <% else %>
-        <div class="none">＜該当するキーワードはありませんでした＞</div>
-      <% end %>
+        </div>
       </div>
     </div>
   </div>
