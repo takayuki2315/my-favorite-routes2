@@ -21,10 +21,12 @@
 
   <div class="field">
     <%= f.label :image, "画像 (好きな画像を添付してください)" %><span class="indispensable">必須</span><br />
-    <%= f.file_field :image, class: :image_btn  %>
+    <%= f.file_field :image, class: :image_btn, id: 'message_image' %>
   </div>
 
   <div class="actions">
     <%= f.submit "保存する", class: :form__btn  %>
   </div>
+
+  <div id="image-list"></div>
 <% end %>
