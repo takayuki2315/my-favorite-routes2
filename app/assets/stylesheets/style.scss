@@ -29,6 +29,7 @@ img {
   vertical-align: bottom;
 }
 
+
 a {
   text-decoration: none;
   color: #3b4043;
@@ -496,6 +497,13 @@ form input[type="submit"]:hover {
 .nav__btn3 {
   display: none;
 }
+
+.img-upload {
+  width: 120px;
+  height: 100%;
+}
+
+
 
 /* タブレット対応 */
 @media (max-width: 1024px) {
