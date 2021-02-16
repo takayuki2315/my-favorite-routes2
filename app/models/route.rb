@@ -20,4 +20,5 @@ class Route < ApplicationRecord
       Route.all
     end
   end
+  
 end
