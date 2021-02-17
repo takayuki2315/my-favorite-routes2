@@ -48,12 +48,10 @@
 ![myfavoriteroutes2](https://user-images.githubusercontent.com/74900438/107003023-71cbb980-67cf-11eb-9949-bdb4bcbfe277.gif)
 
 
-
 # テスト
 * RSpec
   - 単体テスト
   - 結合テスト
-
 
 # 使用したGem
 * gem 'devise'
@@ -67,7 +65,7 @@
 * gem 'faker'
 
 
-# My Favorite Routesのテーブル設計
+# My Favorite Routes テーブル設計
 
 ## users テーブル
 
