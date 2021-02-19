@@ -37,9 +37,11 @@
             <%= "#{@route.city.name}" %>
           </p>
         </div>
-        <div id="like">
+        <div class="prototype__detail">
+          <div class="detail__title" id='route_<%= @route.id %>'>
           <%# いいね機能の部分テンプレートの表示 %>
-          <%= render 'like', route: @route %>
+            <%= render 'like', route: @route %>
+          </div>
         </div>
       </div>
     </div>

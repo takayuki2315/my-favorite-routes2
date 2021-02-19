@@ -5,6 +5,7 @@ class RoutesController < ApplicationController
 
   def index
     @routes = Route.includes(:user).order("created_at DESC")
+    
   end
 
   def new

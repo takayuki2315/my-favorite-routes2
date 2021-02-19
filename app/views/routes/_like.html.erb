@@ -1,6 +1,10 @@
 
-<% if current_user.favorited_by?(@route) %>
-  <%= link_to 'いいね外す', destroy_like_path(@route), method: :DELETE, remote: true%> <%= @route.likes.count %>
+<% if current_user.liked_by?(@route) %>
+  <%= link_to 'いいね!', destroy_like_path(@route), class: "like-link", method: :DELETE, remote: true  %> 
+    <i class="fa-lg fas fa-heart unlike-btn"></i>
+  <%= @route.likes.count %>
 <% else %>
-  <%= link_to 'いいねする', create_like_path(@route), method: :POST, remote: true %> <%= @route.likes.count %>
+  <%= link_to 'いいねする', create_like_path(@route), class: "like-link", method: :POST, remote: true  %> 
+    <i class="fa-lg fas fa-heart like-btn"></i>
+  <%= @route.likes.count %>
 <% end %>
