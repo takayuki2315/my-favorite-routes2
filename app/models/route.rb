@@ -5,6 +5,7 @@ class Route < ApplicationRecord
 
   belongs_to :user
   has_many :comments, dependent: :destroy
+  has_many :likes
   has_one_attached :image, dependent: :destroy
 
   validates :title, presence: true
@@ -20,4 +21,5 @@ class Route < ApplicationRecord
       Route.all
     end
   end
+  
 end

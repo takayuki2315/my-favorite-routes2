@@ -40,6 +40,7 @@
 * プルダウン選択機能
 * プレビュー機能
 * コメント機能
+* いいね機能
 * 投稿検索機能
 * 投稿の詳細、編集、削除機能
 * 単体テスト、結合テスト
@@ -48,26 +49,25 @@
 ![myfavoriteroutes2](https://user-images.githubusercontent.com/74900438/107003023-71cbb980-67cf-11eb-9949-bdb4bcbfe277.gif)
 
 
-
 # テスト
 * RSpec
   - 単体テスト
   - 結合テスト
-
 
 # 使用したGem
 * gem 'devise'
 * gem 'mini_magick'
 * gem 'image_processing', '~> 1.2'
 * gem 'active_hash'
-* gem "aws-sdk-s3"
-* gem "pry-rails"
+* gem 'aws-sdk-s3'
+* gem 'pry-rails'
 * gem 'rspec-rails', '~> 4.0.0'
 * gem 'factory_bot_rails'
 * gem 'faker'
+* gem 'font-awesome-sass'
 
 
-# My Favorite Routesのテーブル設計
+# My Favorite Routes テーブル設計
 
 ## users テーブル
 

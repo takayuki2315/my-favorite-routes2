@@ -5,14 +5,14 @@
         <%= "#{@route.title}"%>
       </p>
       <%= link_to "by #{@route.user.nickname}", user_path(@route.user.id), class: :prototype__user %>
-      <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
+      <%# ルートの投稿者とログインしているユーザーが同じであれば以下を表示する %>
       <% if user_signed_in? && current_user.id == @route.user_id %>
         <div class="prototype__manage">
           <%= link_to "編集する", edit_route_path(@route.id), class: :prototype__btn %>
           <%= link_to "削除する", route_path(@route.id), method: :delete, class: :prototype__btn %>
         </div>
       <% end %>
-      <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
+      <%# //ルートの投稿者とログインしているユーザーが同じであれば上記を表示する %>
       <div class="prototype__detail">
       　<p class="detail__title">＜ルート詳細＞</p>
       </div>
@@ -36,6 +36,12 @@
           <p class="detail__message">
             <%= "#{@route.city.name}" %>
           </p>
+        </div>
+        <div class="prototype__detail">
+          <div class="detail__title" id='route_<%= @route.id %>'>
+          <%# いいね機能の部分テンプレートの表示 %>
+            <%= render 'like', route: @route %>
+          </div>
         </div>
       </div>
     </div>

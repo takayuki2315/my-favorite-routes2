@@ -11,6 +11,12 @@
       <span class="category"><%= "#{route.city.name}" %>
       </span>
     </p>
+    <p class="card__summary">
+      <div class="detail__title" id='route_<%= route.id %>'>いいね!
+        <i class="fa fa-heart unlike-btn"></i>
+        <%= route.likes.count %>
+      </div>
+    </p>
     <%= link_to "#{route.user.nickname}", user_path(route.user.id), class: :card__user %>
   </div>
 </div>
