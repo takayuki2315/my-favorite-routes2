@@ -6,11 +6,14 @@ Rails.application.routes.draw do
   end
   
   root to: 'routes#index'
-  resources :routes, only: [:new, :create, :show, :edit, :update, :destroy] do
+  resources :routes, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
     resources :comments, only: [:create]
     collection do
       get 'search'
     end
   end
   resources :users, only: [:show]
+  
+  post 'like/:id' => 'likes#create', as: 'create_like'
+  delete 'like/:id' => 'likes#destroy', as: 'destroy_like'
 end
