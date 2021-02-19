@@ -302,10 +302,12 @@ a {
   text-align: right;
   text-decoration: underline;
   padding: 5px;
+  
 }
 .card__body {
   width: 300px;
-  height: 180px;
+  height: 100%;
+
 }
 
 /* 詳細ページ */
@@ -343,7 +345,7 @@ a {
   padding: 16px 16px;
   box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
   background-color: white;
-  word-wrap:break-all;;
+  word-wrap:break-all;
 }
 .prototype__detail{
   display: flex;

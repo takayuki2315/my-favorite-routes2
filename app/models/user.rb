@@ -10,8 +10,8 @@ class User < ApplicationRecord
     end
   end
 
-  def favorited_by?(route_id)
-    Like.where(route_id: route_id).exists?
+  def liked_by?(route_id)
+    likes.where(route_id: route_id).exists?
   end
 
   validates :nickname, presence: true
