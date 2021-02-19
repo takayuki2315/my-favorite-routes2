@@ -10,10 +10,15 @@ class User < ApplicationRecord
     end
   end
 
+  def favorited_by?(route_id)
+    Like.where(route_id: route_id).exists?
+  end
+
   validates :nickname, presence: true
 
   has_many :routes ,dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :likes
 
 
 end
