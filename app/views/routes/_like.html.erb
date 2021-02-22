@@ -4,7 +4,7 @@
     <i class="fa-lg fas fa-heart unlike-btn"></i>
   <%= @route.likes.count %>
 <% else %>
-  <%= link_to 'いいねする', create_like_path(@route), class: "like-link", method: :POST, remote: true  %> 
+  <%= link_to 'いいね', create_like_path(@route), class: "like-link", method: :POST, remote: true  %> 
     <i class="fa-lg fas fa-heart like-btn"></i>
   <%= @route.likes.count %>
 <% end %>
