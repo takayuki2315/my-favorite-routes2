@@ -12,9 +12,16 @@
       </span>
     </p>
     <p class="card__summary">
-      <div class="detail__title" id='route_<%= route.id %>'>いいね!
-        <i class="fa fa-heart unlike-btn"></i>
-        <%= route.likes.count %>
+      <div class="category" id='route_<%= route.id %>'>
+      <% if current_user.liked_by?(route) %>
+        <%= link_to 'いいね!', destroy_like_path(route), class: "like-link", method: :DELETE, remote: true  %> 
+          <i class="fa-lg fas fa-heart unlike-btn"></i>
+          <%= route.likes.count %>
+      <% else %>
+        <%= link_to 'いいね', create_like_path(route), class: "like-link", method: :POST, remote: true %> 
+          <i class="fa-lg fas fa-heart like-btn"></i>
+          <%= route.likes.count %>
+      <% end %>
       </div>
     </p>
     <%= link_to "#{route.user.nickname}", user_path(route.user.id), class: :card__user %>
