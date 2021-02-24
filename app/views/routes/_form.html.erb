@@ -1,6 +1,6 @@
 <%= form_with model: @route, local: true do |f|%>
   <div class="field">
-    <%= f.label :title, "タイトル" %><span class="indispensable">必須</span><br />
+    <%= f.label :title, "タイトル(30字以内)" %><span class="indispensable">必須</span><br />
     <%= f.text_field :title, class: :form_title %>
   </div>
 
