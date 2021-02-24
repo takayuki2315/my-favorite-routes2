@@ -8,7 +8,7 @@ class Route < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_one_attached :image, dependent: :destroy
 
-  validates :title, presence: true
+  validates :title, presence: true, length: { maximum: 30 }
   validates :text, presence: true
   validates :city_id, presence: true
   validates :category_id, numericality: { other_than: 0 }
