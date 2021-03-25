@@ -14,7 +14,6 @@ div {
   margin: 0;
   padding: 0;
 }
-
 body {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
   color: #3b4043;
@@ -29,7 +28,6 @@ img {
   vertical-align: bottom;
 }
 
-
 a {
   text-decoration: none;
   color: #3b4043;
@@ -40,7 +38,6 @@ a {
 .header {
   background-color: #e5f8fc;
   margin-bottom: 30px;
-
 }
 .inner {
   width: 1024px;
@@ -109,7 +106,6 @@ a {
 .nav__logout:hover{
   opacity: 0.5;
 }
-
 .title-contents {
   width: 100vw;
   height: 75vh;
@@ -122,9 +118,7 @@ a {
   align-items: center;
   justify-content: center;
   padding: 5vh 15vw;
-
 }
-
 .service-title {
   font-size: 8vh;
   font-size: 7.3vh;
@@ -132,7 +126,6 @@ a {
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
   padding-bottom: 20px;
 }
-
 .service-explain {
   font-size: 3vh;
   line-height: 40px;
@@ -155,7 +148,6 @@ a {
   font-weight: bold;
   margin: 5vh 0 5vh 0;
   padding-top: 10px;
-
 }
 
 /* フォーム周り */
@@ -240,8 +232,6 @@ a {
 .hello{
   padding: 0 35px;
 }
-
-
 .greeting{
   font-size: 25px;
   margin-bottom: 20px;
@@ -291,6 +281,7 @@ a {
   font-size: 20px;
   margin-bottom: 8px;
   font-weight: bold;
+  word-wrap: break-all;
 }
 .card__summary {
   font-size: 16px;
@@ -306,6 +297,7 @@ a {
 .card__body {
   width: 300px;
   height: 210px;
+  word-wrap: break-all;
 }
 
 /* 詳細ページ */
@@ -327,7 +319,6 @@ a {
   text-align: center;
   text-decoration: underline;
 }
-
 .route_image_text{
   display: flex;
   justify-content: space-between;
@@ -519,8 +510,6 @@ form input[type="submit"]:hover {
   height: 100%;
 }
 
-
-
 /* タブレット対応 */
 @media (max-width: 1024px) {
   .inner {
@@ -544,8 +533,22 @@ form input[type="submit"]:hover {
     font-size: 24px;
   }
   .card {
-    width: 48%;
+    width: 40%;
     margin-bottom: 5px;
+    word-wrap: break-all;
+  }
+  .card__img {
+    width: 100%;
+    height: 250px;
+    margin-bottom: 16px;
+  }
+  .card__summary {
+    font-size: 14px;
+  }
+  .card__body {
+    width: 350px;
+    height: 210px;
+    word-wrap: break-all;
   }
   .service-title {
     font-size: 4.5vh;
@@ -783,8 +786,13 @@ form input[type="submit"]:hover {
     font-size: 20px;
   }
   .card {
-    width: 100%;
+    width: 350px;
     margin-bottom: 15px;
+  }
+  .card__img {
+    width: 100%;
+    height: 250px;
+    margin-bottom: 16px;
   }
 
   .card__title {
